@@ -19,16 +19,26 @@ Or install it yourself as:
     $ gem install stimulant
 
 ## Usage
-stimulant adds a helper method `stimulus_scope`
+stimulant adds a helper method `stimulus_scope`.
 
 ```erbruby
 <%= stimulus_scope :slideshow do |s| %>
-  <div data-controller="<%= s.controller %>">
+  <div data-controller="<%= s.controller %>" data-action="<%= s.action(:next, on: "slideshow:next", at: "window)>
     <div data-target="<%= s.target(:slide) %>">
-      <button data-action="<%= s.action(:next) %>">next</button>
+      <button data-action="<%= s.action(:next) + s.action(:hoge) %>">next</button>
     </div>
   </div>
 <% end %>
+```
+
+becomes
+
+```html
+<div data-controller="slidedhow" data-action="slidedhow:next@window->slideshow#next">
+  <div data-target="slideshow.slide">
+    <button data-action="slidedhow#next slideshow#hoge">next</button>
+  </div>
+</div>
 ```
 
 
