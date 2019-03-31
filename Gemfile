@@ -4,8 +4,8 @@ source "https://rubygems.org"
 gemspec
 
 gem "onkcop", "~> 0.53", require: false
-gem "rake", "~> 10.0"
-gem "rspec", "~> 3.0"
+gem "rails"
+gem "rake", ">= 11.0"
 gem "rubocop", "~> 0.66", require: false
 
 group :test do

@@ -2,6 +2,12 @@
 sudo: false
 language: ruby
 cache: bundler
+install:
+  - bundle install
+script:
+  - bundle exec rubocop
+  - bundle exec rake test
 rvm:
-  - 2.5.3
+  - 2.5.5
+  - 2.6.2
 before_install: gem install bundler -v 2.0.1

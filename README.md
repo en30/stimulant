@@ -1,6 +1,6 @@
 # Stimulant
 
-Helper to integrate Stimulus into Rails application
+Helper to integrate Stimulus into Rails application.
 
 ## Installation
 
@@ -19,8 +19,18 @@ Or install it yourself as:
     $ gem install stimulant
 
 ## Usage
+stimulant adds a helper method `stimulus_scope`
 
-TODO: Write usage instructions here
+```erbruby
+<%= stimulus_scope :slideshow do |s| %>
+  <div data-controller="<%= s.controller %>">
+    <div data-target="<%= s.target(:slide) %>">
+      <button data-action="<%= s.action(:next) %>">next</button>
+    </div>
+  </div>
+<% end %>
+```
+
 
 ## Development
 

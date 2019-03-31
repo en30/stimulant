@@ -4,3 +4,5 @@ inherit_gem:
 
 AllCops:
   TargetRubyVersion: 2.5
+Style/AccessModifierDeclarations:
+  Enabled: false
