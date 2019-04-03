@@ -12,5 +12,6 @@ require "stimulant/list"
 require "stimulant/controller"
 require "stimulant/action"
 require "stimulant/target"
+require "stimulant/tag_builder"
 
 require "stimulant/railtie" if defined?(Rails)

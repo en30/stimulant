@@ -19,8 +19,10 @@ Or install it yourself as:
     $ gem install stimulant
 
 ## Usage
-stimulant adds a helper method `stimulus_scope`.
+### Helper Methods
+stimulant adds two helper methods `stimulus_scope` and `stimulus_tag`.
 
+#### 1. stimulus_scope(controller, **data)
 ```erbruby
 <%= stimulus_scope :slideshow do |s| %>
   <div data-controller="<%= s.controller %>" data-action="<%= s.action(:next, on: "slideshow:next", at: "window)>
@@ -41,6 +43,24 @@ becomes
 </div>
 ```
 
+#### 2. stimulus_tag(controller, **data)
+```erbruby
+<%= stimulus_tag(:slideshow).div do |s| %>
+  <div data-target="<%= s.target(:slide) %>">
+    <button data-action="<%= s.action(:next) + s.action(:hoge) %>">next</button>
+  </div>
+<% end %>
+```
+
+becomes
+
+```html
+<div data-controller="slidedhow" data-action="slidedhow:next@window->slideshow#next">
+  <div data-target="slideshow.slide">
+    <button data-action="slidedhow#next slideshow#hoge">next</button>
+  </div>
+</div>
+```
 
 ## Development
 
