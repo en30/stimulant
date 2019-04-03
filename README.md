@@ -55,7 +55,7 @@ becomes
 becomes
 
 ```html
-<div data-controller="slidedhow" data-action="slidedhow:next@window->slideshow#next">
+<div data-controller="slidedhow">
   <div data-target="slideshow.slide">
     <button data-action="slidedhow#next slideshow#hoge">next</button>
   </div>
